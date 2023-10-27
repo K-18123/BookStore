@@ -171,6 +171,9 @@
     <Compile Include="Models\NXB.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\QUANLI.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\SACH.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -205,6 +208,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\LoginAdmin.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -280,16 +284,32 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
     <Content Include="Views\Shared\_LayoutProduct.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Author\Create.cshtml" />
+    <Content Include="Views\Author\Delete.cshtml" />
+    <Content Include="Views\Author\Details.cshtml" />
+    <Content Include="Views\Author\Edit.cshtml" />
+    <Content Include="Views\Author\Index.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Category\Delete.cshtml" />
+    <Content Include="Views\Publisher\Create.cshtml" />
+    <Content Include="Views\Publisher\Delete.cshtml" />
+    <Content Include="Views\Publisher\Details.cshtml" />
+    <Content Include="Views\Publisher\Edit.cshtml" />
+    <Content Include="Views\Publisher\Index.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Customer\Create.cshtml" />
+    <Content Include="Views\Customer\Delete.cshtml" />
+    <Content Include="Views\Customer\Details.cshtml" />
+    <Content Include="Views\Customer\Edit.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Admin\" />
-    <Folder Include="Views\Author\" />
     <Folder Include="Views\Book\" />
     <Folder Include="Views\Cart\" />
-    <Folder Include="Views\Category\" />
-    <Folder Include="Views\Customer\" />
-    <Folder Include="Views\Publisher\" />
     <Folder Include="Views\Voucher\" />
   </ItemGroup>
   <ItemGroup>

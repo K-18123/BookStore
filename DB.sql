@@ -94,7 +94,7 @@ create table KHACHHANG(
 	XacThuc bit
 )
 create table QUANLI (
-	TenTaiKhoan varchar(max),
+	TenTaiKhoan varchar(30) primary key,
 	MatKhau varchar(max)
 )
 

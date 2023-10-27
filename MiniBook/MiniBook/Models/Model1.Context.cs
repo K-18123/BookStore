@@ -35,5 +35,6 @@ namespace MiniBook.Models
         public virtual DbSet<THELOAI> THELOAIs { get; set; }
         public virtual DbSet<VAITRO> VAITROes { get; set; }
         public virtual DbSet<VOUCHER> VOUCHERs { get; set; }
+        public virtual DbSet<QUANLI> QUANLIs { get; set; }
     }
 }

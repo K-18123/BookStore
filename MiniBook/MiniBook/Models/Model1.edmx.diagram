@@ -24,6 +24,7 @@
         <AssociationConnector Association="BOOKSTOREModel.FK_Sach_Vaitro" ManuallyRouted="false" />
         <AssociationConnector Association="BOOKSTOREModel.FK_TheLoai_Sach" ManuallyRouted="false" />
         <AssociationConnector Association="BOOKSTOREModel.FK_TG_Vaitro" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BOOKSTOREModel.QUANLI" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
