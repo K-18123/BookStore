@@ -5,47 +5,46 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Details</h2>
-
+<h2 style="text-align:center">Chi tiết nhà xuất bản</h2>
+<hr />
 <div>
-    <h4>NXB</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.SDT)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SDT)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Mail)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Mail)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.DiaChi)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.DiaChi)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TenNXB)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TenNXB)
-        </dd>
-
-    </dl>
+    <div class="">
+        <div class="row">
+            <div class="col-md-3 row-title">
+                Tên NXB:
+            </div>
+            <div class="col-md-9">
+                @Html.DisplayFor(model => model.TenNXB)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 row-title">
+                SDT:
+            </div>
+            <div class="col-md-9">
+                @Html.DisplayFor(model => model.SDT)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 row-title">
+                Mail:
+            </div>
+            <div class="col-md-9">
+                @Html.DisplayFor(model => model.Mail)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 row-title">
+                Địa chỉ:
+            </div>
+            <div class="col-md-9">
+                @Html.DisplayFor(model => model.DiaChi)
+            </div>
+        </div>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IDNXB }) |
-    @Html.ActionLink("Back to List", "Index")
+<p style="text-align:center; padding-top: 20px">
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.IDNXB }, new { @class = "btn btn-outline-warning" }) |
+    @Html.ActionLink("Trở về", "Index", null, new { @class = "btn btn-outline-secondary" })
 </p>

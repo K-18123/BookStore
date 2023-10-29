@@ -4,11 +4,9 @@
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-<h2>Tạo sách mới</h2>
+<h2 style="text-align:center">Tạo sách mới</h2>
 <hr />
-<div>
-    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-outline-secondary" })
-</div>
+
 
 @using (Html.BeginForm("Create", "Book", FormMethod.Post, new { @enctype = "multipart/form-data" }))
 {
@@ -98,10 +96,9 @@
             </div>
         </div>
 
-        <div class="form-group " style="padding-top:50px">
-            <div class="col-md-offset-2 col-md-10   text-center">
-                <input type="submit" value="Tạo mới" class="btn btn-primary" />
-            </div>
+        <div class="form-actions no-color"style="text-align:center; padding-top: 20px">
+                <input type="submit" value="Tạo mới" class="btn btn-primary" /> | 
+                @Html.ActionLink("Trở về", "Index", null, new { @class = "btn btn-outline-secondary" })
         </div>
     </div>
 }

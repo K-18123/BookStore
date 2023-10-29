@@ -17,8 +17,6 @@ namespace MiniBook.Controllers
         // GET: Author
         public ActionResult Index()
         {
-            if (Session["Admin"] == null)
-                return RedirectToAction("Login", "Admin");
             return View(db.TACGIAs.ToList());
         }
 

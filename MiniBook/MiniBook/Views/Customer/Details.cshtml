@@ -5,87 +5,94 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Details</h2>
-
+<h2 style="text-align:center">Chi tiết sách</h2>
+<hr />
 <div>
-    <h4>KHACHHANG</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Ten)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Ten)
-        </dd>
+    <div class="dl-horizontal">
+        <div class="row">
+            <div class="col-md-3 row-title">
+                Tên khách hàng:
+            </div>
+            <div class="col-md-9">
+                @Html.DisplayFor(model => model.Ten)
+            </div>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.DiaChi)
-        </dt>
+        <div class="row">
+            <div class="col-md-3 row-title">
+                Địa chỉ:
+            </div>
+            <div class="col-md-9">
+                @Html.DisplayFor(model => model.DiaChi)
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.DiaChi)
-        </dd>
+        <div class="row">
+            <div class="col-md-3 row-title">
+                Số điện thoại:
+            </div>
+            <div class="col-md-9">
+                @Html.DisplayFor(model => model.SDT)
+            </div>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SDT)
-        </dt>
+        <div class="row">
+            <div class="col-md-3 row-title">
+                Mail:
+            </div>
+            <div class="col-md-9">
+                @Html.DisplayFor(model => model.Mail)
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.SDT)
-        </dd>
+        <div class="row">
+            <div class="col-md-3 row-title">
+                Tên đăng nhập:
+            </div>
+            <div class="col-md-9">
+                @Html.DisplayFor(model => model.TenDangNhap)
+            </div>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Mail)
-        </dt>
+        <div class="row">
+            <div class="col-md-3 row-title">
+                Mật khẩu:
+            </div>
+            <div class="col-md-9">
+                @Html.DisplayFor(model => model.MatKhau)
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Mail)
-        </dd>
+        <div class="row">
+            <div class="col-md-3 row-title">
+                Ngày sinh:
+            </div>
+            <div class="col-md-9">
+                @Html.DisplayFor(model => model.NgaySinh)
+            </div>
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TenDangNhap)
-        </dt>
+        <div class="row">
+            <div class="col-md-3 row-title">
+                Giới tính:
+            </div>
+            <div class="col-md-9">
+                @Html.DisplayFor(model => model.GioiTinh)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 row-title">
+                Xác thực:
+            </div>
+            <div class="col-md-9">
+                @Html.DisplayFor(model => model.XacThuc)
+            </div>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.TenDangNhap)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.MatKhau)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.MatKhau)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NgaySinh)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NgaySinh)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.GioiTinh)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.GioiTinh)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.XacThuc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.XacThuc)
-        </dd>
-
-    </dl>
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.IDKhachHang }) |
-    @Html.ActionLink("Back to List", "Index")
+<p style="text-align:center; padding-top: 20px">
+    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.IDKhachHang }, new { @class = "btn btn-outline-warning" }) |
+    @Html.ActionLink("Trở về", "Index", null, new { @class = "btn btn-outline-secondary" })
 </p>

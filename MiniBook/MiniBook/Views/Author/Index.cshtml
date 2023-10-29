@@ -5,41 +5,49 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-
+<h2 style="text-align:center">Danh sách tác giả</h2>
+<hr />
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Thêm mới", "Create", null, new { @class = "btn btn-outline-primary" })
 </p>
-<table class="table">
+<table class="table .table-striped">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Ten)
+            Tên tác giả
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DiaChi)
+            Địa chỉ
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Mail)
+            Mail
+        </th>
+        <th>
+            Giới thiệu
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ten)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DiaChi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Mail)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.IDTG }) |
-            @Html.ActionLink("Details", "Details", new { id=item.IDTG }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.IDTG })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GioiThieu)
+            </td>
+            <td>
+                @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.IDTG }, new { @class = "btn btn-outline-warning" }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.IDTG }, new { @class = "btn btn-outline-info" }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.IDTG }, new { @class = "btn btn-outline-danger" })
+            </td>
+        </tr>
+    }
 
 </table>

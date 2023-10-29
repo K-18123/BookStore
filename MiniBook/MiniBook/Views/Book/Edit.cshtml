@@ -4,12 +4,11 @@
     ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
-<h2>Chỉnh sửa sách </h2>
+<h2 style="text-align:center">Chỉnh sửa thông tin sách sách </h2>
+
 <hr />
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
-@using (Html.BeginForm("Create", "Book", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+
+@using (Html.BeginForm("Edit", "Book", FormMethod.Post, new { @enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
@@ -99,10 +98,9 @@
             </div>
         </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-success" />
-            </div>
+        <div class="form-actions no-color"style="text-align:center; padding-top: 20px">
+                <input type="submit" value="Lưu" class="btn btn-success" /> |
+                @Html.ActionLink("Trở về", "Index", null, new { @class = "btn btn-outline-secondary" })
         </div>
     </div>
 }

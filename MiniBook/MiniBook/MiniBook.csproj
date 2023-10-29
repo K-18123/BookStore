@@ -294,11 +294,6 @@
     <Content Include="Views\Shared\_LayoutProduct.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Author\Create.cshtml" />
-    <Content Include="Views\Author\Delete.cshtml" />
-    <Content Include="Views\Author\Details.cshtml" />
-    <Content Include="Views\Author\Edit.cshtml" />
-    <Content Include="Views\Author\Index.cshtml" />
     <Content Include="Views\Publisher\Create.cshtml" />
     <Content Include="Views\Publisher\Delete.cshtml" />
     <Content Include="Views\Publisher\Details.cshtml" />
@@ -320,6 +315,11 @@
     <Content Include="Views\Category\Details.cshtml" />
     <Content Include="Views\Category\Edit.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Author\Create.cshtml" />
+    <Content Include="Views\Author\Delete.cshtml" />
+    <Content Include="Views\Author\Details.cshtml" />
+    <Content Include="Views\Author\Edit.cshtml" />
+    <Content Include="Views\Author\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
