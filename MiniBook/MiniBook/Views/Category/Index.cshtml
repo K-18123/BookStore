@@ -1,7 +1,6 @@
 ﻿@model IEnumerable<MiniBook.Models.THELOAI>
 
 @{
-    <meta charset="utf-8">
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
@@ -19,16 +18,17 @@
         <th></th>
     </tr>
 
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TenTheLoai)
-            </td>
-            <td>
-                @Html.ActionLink("Xóa", "Delete", new { id = item.IDTheLoai }, new { @class = "btn btn-outline-danger" })
-            </td>
-        </tr>
-    }
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenTheLoai)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDTheLoai }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDTheLoai }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDTheLoai })
+        </td>
+    </tr>
+}
 
 </table>

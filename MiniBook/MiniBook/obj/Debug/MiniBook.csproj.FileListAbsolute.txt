@@ -81,3 +81,7 @@ D:\HOCKI1NAM3\DOANPM\DoAn\BookStore\MiniBook\MiniBook\obj\Debug\MiniBook.csproj.
 D:\HOCKI1NAM3\DOANPM\DoAn\BookStore\MiniBook\MiniBook\obj\Debug\MiniBook.csproj.CopyComplete
 D:\HOCKI1NAM3\DOANPM\DoAn\BookStore\MiniBook\MiniBook\obj\Debug\MiniBook.dll
 D:\HOCKI1NAM3\DOANPM\DoAn\BookStore\MiniBook\MiniBook\obj\Debug\MiniBook.pdb
+D:\HOCKI1NAM3\DOANPM\DoAn\BookStore\MiniBook\MiniBook\bin\PagedList.dll
+D:\HOCKI1NAM3\DOANPM\DoAn\BookStore\MiniBook\MiniBook\bin\PagedList.Mvc.dll
+D:\HOCKI1NAM3\DOANPM\DoAn\BookStore\MiniBook\MiniBook\bin\PagedList.xml
+D:\HOCKI1NAM3\DOANPM\DoAn\BookStore\MiniBook\MiniBook\bin\PagedList.Mvc.xml
