@@ -294,7 +294,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutHome.cshtml" />
-    <Content Include="Views\Shared\_LayoutProduct.cshtml" />
     <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Publisher\Create.cshtml" />
@@ -324,6 +323,12 @@
     <Content Include="Views\Author\Edit.cshtml" />
     <Content Include="Views\Author\Index.cshtml" />
     <Content Include="Views\MBook\Index.cshtml" />
+    <Content Include="Views\MBook\AllBook.cshtml" />
+    <Content Include="Views\Shared\_LayoutAllBook.cshtml" />
+    <Content Include="Views\MBook\GetCategories.cshtml" />
+    <Content Include="Views\MBook\Details.cshtml" />
+    <Content Include="Views\Customer\Register.cshtml" />
+    <Content Include="Views\Customer\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

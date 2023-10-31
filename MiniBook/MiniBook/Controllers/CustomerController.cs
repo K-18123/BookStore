@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.Ajax.Utilities;
 using MiniBook.Models;
 
 namespace MiniBook.Controllers
@@ -124,6 +125,78 @@ namespace MiniBook.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        [HttpGet]
+        public ActionResult Register()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Register([Bind(Include = "IDKhachHang,Ten,DiaChi,SDT,Mail,TenDangNhap,MatKhau,NgaySinh,GioiTinh,XacThuc")]  KHACHHANG cus)
+        {
+            if(ModelState.IsValid)
+            {
+                if (string.IsNullOrEmpty(cus.Ten))
+                    ModelState.AddModelError(String.Empty, "Không được để trống");
+                if (string.IsNullOrEmpty(cus.TenDangNhap))
+                    ModelState.AddModelError(String.Empty, "Không được để trống");
+                if (string.IsNullOrEmpty(cus.MatKhau))
+                    ModelState.AddModelError(String.Empty, "Không được để trống");
+                if (string.IsNullOrEmpty(cus.Mail))
+                    ModelState.AddModelError(String.Empty, "Không được để trống");
+                if (string.IsNullOrEmpty(cus.SDT))
+                    ModelState.AddModelError(String.Empty, "Không được để trống");
+                if (string.IsNullOrEmpty(cus.DiaChi ))
+                    ModelState.AddModelError(String.Empty, "Không được để trống");
+
+                var cusdb = db.KHACHHANGs.FirstOrDefault(c => c.TenDangNhap == cus.TenDangNhap);
+                if (cusdb != null)
+                {
+                    ModelState.AddModelError(String.Empty, "tên đăng nhập đã được sữ dụng. Vui lòng chọn tên đăng nhập khác!");
+                }
+                if (ModelState.IsValid)
+                {
+                    cus.XacThuc = false;
+                    db.KHACHHANGs.Add(cus);
+                    db.SaveChanges();
+                }
+                else
+                {
+                    return View();
+                }
+            }
+            return RedirectToAction("Login");
+        }
+
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(KHACHHANG cus)
+        {
+            if (ModelState.IsValid)
+            {
+                //Kiểm tra có admin này hay chưa
+                var cusdb = db.KHACHHANGs.FirstOrDefault(c => c.TenDangNhap == cus.TenDangNhap && c.MatKhau == cus.MatKhau);
+                if (cusdb == null)
+                     ViewBag.ThongBao="Tên đăng nhập hoặc mật khẩu không đúng";
+                else
+                {
+                    Session["CusName"] = cusdb.Ten;
+                    ViewBag.ThongBao = "Đăng nhập admin thành công";
+                    return RedirectToAction("Index", "MBook");
+                }
+            }
+            return View();
+        }
+        public ActionResult Logout()
+        {
+            Session.Abandon();
+            return RedirectToAction("Login");
         }
     }
 }

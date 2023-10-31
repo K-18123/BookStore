@@ -27,5 +27,20 @@ namespace MiniBook.Controllers
         {
             return View(db.SACHes.OrderByDescending(sach => sach.NgayPhatHanh).ToList());
         }
+        public ActionResult GetCategories ()
+        {
+            var c =db.THELOAIs.ToList();
+            return PartialView(c); 
+        }
+        public ActionResult BookForCate(int id)
+        {
+            var books =db.SACHes.Where( b=> b.IDTheLoai == id).ToList();
+            return View("AllBook",books);
+        }
+        public ActionResult Details (int id)
+        {
+            var book = db.SACHes.FirstOrDefault(b => b.IDSach == id);
+            return View(book);
+        }
     }
 }

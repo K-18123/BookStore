@@ -1,0 +1,28 @@
+﻿@using MiniBook.Models
+@model SACH
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutHome.cshtml";
+}
+<section class="py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-4"><img class="card-img-top mb-4 mb-md-0" src="~/Images/@Model.AnhMinhHoa" alt="..." /></div>
+            <div class="col-md-8">
+
+                <h1 class="display-6 fw-bolder">@Model.TenSach</h1>
+                <div class="fs-5 mb-5">
+                    @*<span class="text-decoration-line-through">$45.00</span> Giá gốc gạch*@
+                    @string.Format("{0:#,##0}", Model.GiaBan) vnd
+                </div>
+                <div class="small mb-1">Số lượt xem: @Model.SLXem</div>
+                <div class="small mb-1">Số lượng kho: @Model.SoLuongKho - Đã bán: @Model.SLBan</div>
+                <button style="margin-top:20px" class="btn btn-outline-danger flex-shrink-0" type="button">
+                    <i class="bi-cart-fill me-1"></i>
+                    Add to cart
+                </button>
+            </div>
+            <p style="margin-top:20px" class="lead">@Model.MoTa</p>
+        </div>
+    </div>
+</section>
