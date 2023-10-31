@@ -138,9 +138,9 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AuthorController.cs" />
     <Compile Include="Controllers\BookController.cs" />
-    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MBookController.cs" />
     <Compile Include="Controllers\PublisherController.cs" />
@@ -160,6 +160,7 @@
     <Compile Include="Models\KHACHHANG.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\MatHangMua.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -222,6 +223,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\anh1.jpg" />
     <Content Include="Images\Logo.png" />
+    <Content Include="Images\logoCart.png" />
     <Content Include="Images\slide1.jpg" />
     <Content Include="Images\slide2.png" />
     <Content Include="Images\slide3.png" />
@@ -329,10 +331,13 @@
     <Content Include="Views\MBook\Details.cshtml" />
     <Content Include="Views\Customer\Register.cshtml" />
     <Content Include="Views\Customer\Login.cshtml" />
+    <Content Include="Views\GioHang\HienThiGioHang.cshtml" />
+    <Content Include="Views\GioHang\GioHangPartial.cshtml" />
+    <Content Include="Views\GioHang\DatHang.cshtml" />
+    <Content Include="Views\GioHang\HoanThanhDonHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Cart\" />
     <Folder Include="Views\Voucher\" />
   </ItemGroup>
   <ItemGroup>

@@ -187,6 +187,7 @@ namespace MiniBook.Controllers
                 else
                 {
                     Session["CusName"] = cusdb.Ten;
+                    Session["TaiKhoan"] = cusdb;
                     ViewBag.ThongBao = "Đăng nhập admin thành công";
                     return RedirectToAction("Index", "MBook");
                 }
