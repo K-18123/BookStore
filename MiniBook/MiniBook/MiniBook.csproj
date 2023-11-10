@@ -140,6 +140,7 @@
     <Compile Include="Controllers\BookController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\DONHANGsController.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MBookController.cs" />
@@ -335,6 +336,10 @@
     <Content Include="Views\GioHang\GioHangPartial.cshtml" />
     <Content Include="Views\GioHang\DatHang.cshtml" />
     <Content Include="Views\GioHang\HoanThanhDonHang.cshtml" />
+    <Content Include="Views\DONHANGs\Details.cshtml" />
+    <Content Include="Views\DONHANGs\Edit.cshtml" />
+    <Content Include="Views\DONHANGs\Index.cshtml" />
+    <Content Include="Views\DONHANGs\ChiTietDonHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

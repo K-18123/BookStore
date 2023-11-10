@@ -155,7 +155,7 @@ namespace MiniBook.Controllers
                 chiTiet.IDSach = sanpham.IDSach;
                 chiTiet.SL = sanpham.SoLuong;
                 chiTiet.DonGia = (float)sanpham.GiaBan;
-
+                chiTiet.ThanhTien = chiTiet.SL * chiTiet.DonGia;
                 db.CHITIETDONHANGs.Add(chiTiet);
             }
             db.SaveChanges();

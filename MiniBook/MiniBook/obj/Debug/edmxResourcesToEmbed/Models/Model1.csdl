@@ -287,6 +287,23 @@
       <End Role="VAITRO" EntitySet="VAITROes" />
     </AssociationSet>
     <EntitySet Name="QUANLIs" EntityType="BOOKSTOREModel.QUANLI" />
+    <FunctionImport Name="SoDonChuaHoanThanh" ReturnType="Collection(Int32)">
+      <Parameter Name="sl" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SoDonHangDaDat" ReturnType="Collection(Int32)">
+      <Parameter Name="sl" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SoDonHoanThanh" ReturnType="Collection(Int32)">
+      <Parameter Name="sl" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SoSanPhamBanDuoc" ReturnType="Collection(Int32)">
+      <Parameter Name="sl" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SoTienBanDuoc" ReturnType="Collection(Double)">
+      <Parameter Name="sotien" Mode="InOut" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="SoSanPhamBanDuoc1" ReturnType="Collection(Int32)" />
+    <FunctionImport Name="SoTienBanDuoc1" ReturnType="Collection(Double)" />
   </EntityContainer>
   <EntityType Name="QUANLI">
     <Key>

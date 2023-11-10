@@ -47,5 +47,8 @@ namespace MiniBook.Controllers
             Session.Abandon();
             return RedirectToAction("Login");
         }
+
+
+
     }
 }

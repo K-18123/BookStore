@@ -130,5 +130,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SoSanPhamBanDuoc1" FunctionName="BOOKSTOREModel.Store.SoSanPhamBanDuoc" />
+    <FunctionImportMapping FunctionImportName="SoTienBanDuoc1" FunctionName="BOOKSTOREModel.Store.SoTienBanDuoc" />
   </EntityContainerMapping>
 </Mapping>
