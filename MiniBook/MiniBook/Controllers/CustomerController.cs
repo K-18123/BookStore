@@ -186,6 +186,7 @@ namespace MiniBook.Controllers
                      ViewBag.ThongBao="Tên đăng nhập hoặc mật khẩu không đúng";
                 else
                 {
+                    Session["IDCus"]=cusdb.IDKhachHang;
                     Session["CusName"] = cusdb.Ten;
                     Session["TaiKhoan"] = cusdb;
                     ViewBag.ThongBao = "Đăng nhập admin thành công";

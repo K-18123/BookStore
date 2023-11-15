@@ -340,6 +340,8 @@
     <Content Include="Views\DONHANGs\Edit.cshtml" />
     <Content Include="Views\DONHANGs\Index.cshtml" />
     <Content Include="Views\DONHANGs\ChiTietDonHang.cshtml" />
+    <Content Include="Views\DONHANGs\LichSuDonHang.cshtml" />
+    <Content Include="Views\DONHANGs\DanhSachSanPham.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

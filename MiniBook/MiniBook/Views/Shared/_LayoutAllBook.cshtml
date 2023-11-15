@@ -43,7 +43,7 @@
                                     @Session["CusName"]
                                 </a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Thông tin tài khoản</a>
+                                    <a class="dropdown-item" href="@Url.Action("LichSuDonHang", "DONHANGs",new { id = Session["IDCus"]})">Lịch sử mua hàng</a>
                                     <a class="dropdown-item" href="~/Customer/Logout">Đăng xuất</a>
                                 </div>
                             </li>

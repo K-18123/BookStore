@@ -11,112 +11,89 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     
     <style>
-        .navigation{
+        .navigation {
             float: right;
             display: block;
             margin: 5px 150px 0 0;
+            
         }
         .nav-item .nav-link {
-            background-color: #e6ccb2;
+            background-color: #5C5C5C;
+            border: 1px solid;
+            margin-top: 1px;
+            color: white;
+        }
+        a {
+            color: white
         }
     </style>
 </head>
 <body>
     <div>
-        <div class="bs_header " style="width:100%; background-color: #7f5539">
-            <nav class="navigation">
-                <ul class="nav nav-pills">
-                    <li>
-                    </li>
-                    @if (Session["Admin"] != null)
-                    {
-                        <li class="nav-link dropdown ">
-                            <span class="nav-link dropdown-toggle link-dark " data-bs-toggle="dropdown">@Session["AdminName"]</span>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="~/Admin/Logout">Đăng xuất</a></li>
-                            </ul>
-                        </li>
 
-                    }
-                </ul>
-            </nav>
-            <div class="app-branding">
-                <a class="app-logo" href="index.html"><img class="logo-icon me-2" src="~/Images/Logo1.png" alt="logo" style="width:10%;"></a>
+        <div class="app-sidepanel"style="background-color: #5C5C5C; ">
+            <div class="app-branding" >
+                <a href="@Url.Action("Index","Admin")">
+                    <img class="logo-icon me-2" src="~/Images/Logo1.png" alt="logo" style="width:100%;">
+                </a>
             </div>
-        </div>
-        <div id="app-sidepanel" class="app-sidepanel">
-            <!--//app-branding-->
-            <div id="sidepanel-drop" class="sidepanel-drop" style="margin-top: 60px"></div>
+            <div class="sidepanel-drop"></div>
             <div class="sidepanel-inner d-flex flex-column">
-                <nav id="app-nav-main" class="app-nav app-nav-main flex-grow-1" , style=" background-color: #e6ccb2">
-                    <ul class="app-menu list-unstyled accordion" id="menu-accordion">
+                <nav class="app-nav app-nav-main flex-grow-1" , style="background-color: #5C5C5C ">
+                    <ul class="app-menu list-unstyled ">
+                            @if (Session["Admin"] != null)
+                            {
+                                <li class="nav-item " style="color: white;">
+                                    <ul  class="nav-link dropdown-toggle " data-bs-toggle="dropdown">@Session["AdminName"]</ul>
+                                    <ul class="dropdown-menu text-white" style="background-color: #5C5C5C; color: white ">
+                                        <li><a class="dropdown-item" href="~/Admin/Logout">Đăng xuất</a></li>
+                                    </ul>
+                                </li>
+
+                            }
                         <li class="nav-item">
-                            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                             <a class="nav-link" href="@Url.Action("Index","Category")">
                                 <span class="nav-link-text">Danh mục sách</span>
-                            </a><!--//nav-link--><!--//nav-link-->
-                        </li><!--//nav-item-->
+                            </a>
+                        </li>
                         <li class="nav-item">
-                            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                             <a class="nav-link" href="@Url.Action("Index", "Publisher")">
                                 <span class="nav-link-text">Nhà xuất bản</span>
-                            </a><!--//nav-link-->
-                        </li><!--//nav-item-->
+                            </a>
+                        </li>
                         <li class="nav-item">
-                            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                             <a class="nav-link" href="@Url.Action("Index","Author")">
                                 <span class="nav-link-text">Tác giả</span>
-                            </a><!--//nav-link-->
-                        </li><!--//nav-item-->
+                            </a>
+                        </li>
                         <li class="nav-item">
-                            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                             <a class="nav-link" href="@Url.Action("Index","Book")">
                                 <span class="nav-link-text">Sách</span>
-                            </a><!--//nav-link-->
-                        </li><!--//nav-item-->
+                            </a>
+                        </li>
 
                         <li class="nav-item">
-                            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
                             <a class="nav-link" href="@Url.Action("Index","Customer")">
                                 <span class="nav-link-text">Tài khoản</span>
-                            </a><!--//nav-link-->
-                        </li><!--//nav-item-->
+                            </a>
+                        </li>
                         <li class="nav-item">
-                            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                            <a class="nav-link" href="@Url.Action("Logout","Users")">
+                            <a class="nav-link" href="@Url.Action("Index","DONHANGs")">
                                 <span class="nav-link-text">Đơn hàng</span>
-                            </a><!--//nav-link-->
-                        </li><!--//nav-item-->
-                        <li class="nav-item">
-                            <!--//Bootstrap Icons: https://icons.getbootstrap.com/ -->
-                            <a class="nav-link" href="@Url.Action("Logout","Users")">
-                                <span class="nav-link-text">Thống kê</span>
-                            </a><!--//nav-link-->
-                        </li><!--//nav-item-->
-                    </ul><!--//app-menu-->
-                </nav><!--//app-nav-->
-            </div><!--//sidepanel-inner-->
+                            </a>
+                        </li>
+
+                    </ul>
+                </nav>
+            </div>
         </div>
     </div>
-    <div class="app-wrapper" , style="background-color: #ede0d4; margin-top: -15px; height: 905px">
+    <div class="app-wrapper" , style="background-color: white; margin-top: -15px; height: 905px">
         <div class="app-content pt-3 p-md-3 p-lg-4">
             <div class="container-xl">
                 @RenderBody()
             </div>
         </div>
-        @*<div style="display:block;padding:5px 0 0 0 ; width:20%; height:100%;float:left ; font-size:28px">
-                <div class="container mt-3 text-white">
-                    <div class="list-group mb-3">
-                        <div class="list-group-item list-group-item-secondary"><a class="nav-link" href="~/Category/Index">Danh mục sách</a></div>
-                        <div class="list-group-item list-group-item-secondary"><a class="nav-link" href="~/Publisher/Index">Nhà xuất bản</a></div>
-                        <div class="list-group-item list-group-item-secondary"><a class="nav-link" href="~/Author/Index">Tác giả</a></div>
-                        <div class="list-group-item list-group-item-secondary"><a class="nav-link" href="~/Book/Index">Sách</a></div>
-                        <div class="list-group-item list-group-item-secondary"><a class="nav-link" href="~/Customer/Index">Tài khoản</a></div>
-                        <div class="list-group-item list-group-item-secondary"><a class="nav-link" href="~/Users/Logout">Đơn hàng</a></div>
-                        <div class="list-group-item list-group-item-secondary"><a class="nav-link" href="~/Users/Logout">Thống kê</a></div>
-                    </div>
-                </div>
-            </div>*@
     </div>
 </body>
 </html>

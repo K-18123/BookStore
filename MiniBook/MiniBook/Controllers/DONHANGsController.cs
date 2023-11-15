@@ -20,7 +20,16 @@ namespace MiniBook.Controllers
             var dONHANGs = db.DONHANGs.Include(d => d.KHACHHANG).Include(d => d.VOUCHER1);
             return View(dONHANGs.ToList());
         }
-
+        public ActionResult LichSuDonHang(int id)
+        {
+            var dsDon = db.DONHANGs.Where(d => d.IDKhachHang == id).ToList();
+            return View(dsDon);
+        }
+        public ActionResult DanhSachSanPham(int id)
+        {
+            var dss = db.CHITIETDONHANGs.Where(d => d.IDDonHang == id).ToList();
+            return View(dss);
+        }
         // GET: DONHANGs/Details/5
         public ActionResult Details(int? id)
         {
