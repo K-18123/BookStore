@@ -39,16 +39,12 @@
         <span class="visually-hidden">Next</span>
     </button>
 </div>
-<div class="container" >
-    <nav class="navbar  bg-body-tertiary rounded-pill" style="background-color: blue;">
-        <div class="container-fluid d-flex justify-content-center">
-            <a  class="navbar-brand justify-content-center" href="@Url.Action("AllBook", "MBook")">Toàn bộ sách</a>
-        </div>
-    </nav>
+<div class="h4 pb-2 mb-4  border-bottom border-danger">   
+        <a style="color: orangered; text-decoration: none" href="@Url.Action("AllBook", "MBook")">Toàn bộ sách</a>
 </div>
 
 <div class="h4 pb-2 mb-4 text-danger border-bottom border-danger">
-    Top 5 sản phẩm bán chạy
+    Top 4 sản phẩm bán chạy
 </div>
 <div class="row ">
     @foreach (var book in Model)

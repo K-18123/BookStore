@@ -1,5 +1,6 @@
 ﻿@using MiniBook.Models
-@model IEnumerable<SACH>
+@using PagedList.Mvc
+@model PagedList.PagedList<SACH>
 @{
     ViewBag.Title = "AllBook";
     Layout = "~/Views/Shared/_LayoutAllBook.cshtml";
@@ -20,4 +21,13 @@
             </div>
         </div>
     }
+    <div class="MenuTrang" style="padding-top:40px; display: flex; justify-content: center; align-items: center; " >
+        @Html.PagedListPager(Model, page => Url.Action("AllBook", new { page }))
+    </div>
+    <style>
+        .MenuTrang li {
+            display: inline;
+        }
+    </style>
+
 </div>

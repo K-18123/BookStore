@@ -5,7 +5,7 @@
     @foreach (var ca in Model)
     {
        <span  class="badge rounded-pill text-bg-outline-info">
-           <a style="font-weight: 500; font-size: 15px" href="@Url.Action("BookForCate","MBook",new {id =ca.IDTheLoai})">@ca.TenTheLoai</a>
+           <a style=" border-radius: 10px; padding: 10px; border: 1px solid #ccc; display: inline-block; text-decoration: none; font-weight: 500; font-size: 20px; color: forestgreen" href="@Url.Action("BookForCate","MBook",new {id =ca.IDTheLoai})">@ca.TenTheLoai</a>
        </span>
     }
 </div>

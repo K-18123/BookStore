@@ -228,6 +228,7 @@
     <Content Include="Images\slide1.jpg" />
     <Content Include="Images\slide2.png" />
     <Content Include="Images\slide3.png" />
+    <Content Include="Images\success.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

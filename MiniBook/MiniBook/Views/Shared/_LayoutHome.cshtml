@@ -13,8 +13,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body >
-    <div class="container">
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container" style="background-color: #fcfcf3;">
+        <nav class="navbar navbar-expand-lg  bg-transparent">
             <div class="container-fluid">
                 <a class="navbar-brand" href="~/MBook/index">
                     <img src="~/Images/Logo.png" alt="Logo" width="130" height="24" class="d-inline-block align-text-top">
@@ -53,20 +53,24 @@
                     <div style="padding-right:1%" class="navbar-brand">
                         @Html.Action("GioHangPartial", "GioHang")
                     </div>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    <form class="d-flex" action="~/MBook/AllBook" role="search">
+                        <input class="form-control me-2" type="search" name="searchString" placeholder="Nhập tên sách" aria-label="searchString">
+                        <button class="btn btn-outline-success" type="submit">Tìm</button>
                     </form>
 
                 </div>
             </div>
         </nav>
+        <hr />
         <br />
         <div style="background-color: #fcfcf3">
-
             <div class="col-md-12">
+
                 @RenderBody()
             </div>
+        </div>
+        <div style="text-align: center; background-color: #fcfcf3; padding-top: 30px; font-weight: 500; font-size: 20px; padding-bottom: 30px; " class="footer">
+            <span>Copyright © 2023 MiniBook</span>
         </div>
     </div>
     @Scripts.Render("~/bundles/jquery")
