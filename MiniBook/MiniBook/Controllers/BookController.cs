@@ -18,6 +18,8 @@ namespace MiniBook.Controllers
         // GET: Book
         public ActionResult Index()
         {
+            if (Session["Admin"] == null)
+                return RedirectToAction("Login", "Admin");
             var sACHes = db.SACHes.Include(s => s.NXB).Include(s => s.THELOAI);
             return View(sACHes.ToList());
         }
@@ -25,6 +27,8 @@ namespace MiniBook.Controllers
         // GET: Book/Details/5
         public ActionResult Details(int? id)
         {
+            if (Session["Admin"] == null)
+                return RedirectToAction("Login", "Admin");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -40,6 +44,8 @@ namespace MiniBook.Controllers
         // GET: Book/Create
         public ActionResult Create()
         {
+            if (Session["Admin"] == null)
+                return RedirectToAction("Login", "Admin");
             ViewBag.IDNXB = new SelectList(db.NXBs, "IDNXB", "TenNXB");
             ViewBag.IDTheLoai = new SelectList(db.THELOAIs, "IDTheLoai", "TenTheLoai");
             return View();
@@ -78,6 +84,8 @@ namespace MiniBook.Controllers
         // GET: Book/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (Session["Admin"] == null)
+                return RedirectToAction("Login", "Admin");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -128,6 +136,8 @@ namespace MiniBook.Controllers
         // GET: Book/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (Session["Admin"] == null)
+                return RedirectToAction("Login", "Admin");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);

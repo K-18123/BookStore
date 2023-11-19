@@ -17,6 +17,8 @@ namespace MiniBook.Controllers
         // GET: DONHANGs
         public ActionResult Index()
         {
+            if (Session["Admin"] == null)
+                return RedirectToAction("Login", "Admin");
             var dONHANGs = db.DONHANGs.Include(d => d.KHACHHANG).Include(d => d.VOUCHER1);
             return View(dONHANGs.ToList());
         }
@@ -27,6 +29,8 @@ namespace MiniBook.Controllers
         }
         public ActionResult DanhSachSanPham(int id)
         {
+            if (Session["Admin"] == null)
+                return RedirectToAction("Login", "Admin");
             var dss = db.CHITIETDONHANGs.Where(d => d.IDDonHang == id).ToList();
             return View(dss);
         }

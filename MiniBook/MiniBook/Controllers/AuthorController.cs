@@ -17,12 +17,16 @@ namespace MiniBook.Controllers
         // GET: Author
         public ActionResult Index()
         {
+            if (Session["Admin"] == null)
+                return RedirectToAction("Login", "Admin");
             return View(db.TACGIAs.ToList());
         }
 
         // GET: Author/Details/5
         public ActionResult Details(int? id)
         {
+            if (Session["Admin"] == null)
+                return RedirectToAction("Login", "Admin");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -38,6 +42,8 @@ namespace MiniBook.Controllers
         // GET: Author/Create
         public ActionResult Create()
         {
+            if (Session["Admin"] == null)
+                return RedirectToAction("Login", "Admin");
             return View();
         }
 
@@ -61,6 +67,8 @@ namespace MiniBook.Controllers
         // GET: Author/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (Session["Admin"] == null)
+                return RedirectToAction("Login", "Admin");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -92,6 +100,8 @@ namespace MiniBook.Controllers
         // GET: Author/Delete/5
         public ActionResult Delete(int? id)
         {
+            if (Session["Admin"] == null)
+                return RedirectToAction("Login", "Admin");
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
