@@ -38,6 +38,7 @@ namespace MiniBook.Controllers
                     ViewBag.ThongBao = "Đăng nhập admin thành công";
                     return RedirectToAction("Index", "Admin");
                 }
+                ViewBag.ThongBao = "Sai tên đăng nhập hoặc mật khẩu";
             }
             return View();
         }

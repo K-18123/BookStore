@@ -25,7 +25,7 @@ namespace MiniBook.Controllers
         }
         public ActionResult AllBook(string searchString, int ? page)
         {
-            int pageSize = 4;
+            int pageSize = 8;
             int pageNum = (page ?? 1);
             var sachs = db.SACHes.OrderByDescending(sach => sach.NgayPhatHanh).ToList();
             if(searchString != null)
@@ -43,7 +43,7 @@ namespace MiniBook.Controllers
         }
         public ActionResult BookForCate(int id, int ? page)
         {
-            int pageSize = 4;
+            int pageSize = 8;
             int pageNum = (page ?? 1);
             var books =db.SACHes.Where( b=> b.IDTheLoai == id).ToList();
             return View("AllBook",books.ToPagedList(pageNum,pageSize));

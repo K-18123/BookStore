@@ -144,19 +144,23 @@ namespace MiniBook.Controllers
             donHang.SDTNhan = khach.SDT;
             donHang.HTThanhToan ="Chưa xác định";
             donHang.HTGiaoHang = "VNEX";
-
             db.DONHANGs.Add(donHang);
             db.SaveChanges();
-
             foreach (var sanpham in giohang)
             {
                 CHITIETDONHANG chiTiet = new CHITIETDONHANG();
+                
                 chiTiet.IDDonHang = donHang.IDDonHang;
                 chiTiet.IDSach = sanpham.IDSach;
                 chiTiet.SL = sanpham.SoLuong;
                 chiTiet.DonGia = (float)sanpham.GiaBan;
                 chiTiet.ThanhTien = chiTiet.SL * chiTiet.DonGia;
                 db.CHITIETDONHANGs.Add(chiTiet);
+                //cập nhật sách
+                SACH sach = db.SACHes.Find(chiTiet.IDSach);
+                sach.SLBan = sach.SLBan +sanpham.SoLuong;
+                sach.SoLuongKho = sach.SoLuongKho - sanpham.SoLuong;
+                db.SaveChanges();
             }
             db.SaveChanges();
 

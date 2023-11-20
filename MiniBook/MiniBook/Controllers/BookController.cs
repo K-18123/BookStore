@@ -58,27 +58,32 @@ namespace MiniBook.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "IDSach,TenSach,GiaBan,SoLuongKho,MoTa,AnhMinhHoa,NgayPhatHanh,SLXem,SLBan,IDNXB,IDTheLoai")] SACH sACH, HttpPostedFileBase AnhMinhHoa)
         {
-            var fileName =Path.GetFileName(AnhMinhHoa.FileName);
-            var path = Path.Combine(Server.MapPath("~/Images"), fileName);
-            if(System.IO.File.Exists(path))
+            if (AnhMinhHoa!=null)
             {
-                ViewBag.ThongBao = "Ảnh đã tồn tại";
+                var fileName = Path.GetFileName(AnhMinhHoa.FileName);
+                var path = Path.Combine(Server.MapPath("~/Images"), fileName);
+                if (System.IO.File.Exists(path))
+                {
+                    ViewBag.ThongBao = "Ảnh đã tồn tại";
+                }
+                else
+                {
+                    AnhMinhHoa.SaveAs(path);
+                }
+                if (ModelState.IsValid)
+                {
+                    sACH.AnhMinhHoa = fileName;
+                    db.SACHes.Add(sACH);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                ViewBag.IDNXB = new SelectList(db.NXBs, "IDNXB", "SDT", sACH.IDNXB);
+                ViewBag.IDTheLoai = new SelectList(db.THELOAIs, "IDTheLoai", "TenTheLoai", sACH.IDTheLoai);
+                return View(sACH);
             }
-            else
-            {
-                AnhMinhHoa.SaveAs(path);
-            }
-            if (ModelState.IsValid)
-            {
-                sACH.AnhMinhHoa = fileName;
-                db.SACHes.Add(sACH);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            ViewBag.IDNXB = new SelectList(db.NXBs, "IDNXB", "SDT", sACH.IDNXB);
-            ViewBag.IDTheLoai = new SelectList(db.THELOAIs, "IDTheLoai", "TenTheLoai", sACH.IDTheLoai);
-            return View(sACH);
+            ViewBag.ThongBao = "Vui lòng điền đầy đủ thông tin";
+            return View();
+            
         }
 
         // GET: Book/Edit/5

@@ -29,8 +29,7 @@ namespace MiniBook.Controllers
         }
         public ActionResult DanhSachSanPham(int id)
         {
-            if (Session["Admin"] == null)
-                return RedirectToAction("Login", "Admin");
+            
             var dss = db.CHITIETDONHANGs.Where(d => d.IDDonHang == id).ToList();
             return View(dss);
         }
@@ -94,6 +93,8 @@ namespace MiniBook.Controllers
         }
         public ActionResult ChiTietDonHang(int id)
         {
+            if (Session["Admin"] == null)
+                return RedirectToAction("Login", "Admin");
             var ctDonHang = db.CHITIETDONHANGs.Where(ct => ct.IDDonHang == id).ToList();
             return View(ctDonHang);
         }

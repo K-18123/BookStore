@@ -38,7 +38,7 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        <td class="col-2">
             @Html.DisplayFor(modelItem => item.TenSach)
         </td>
         <td>
@@ -59,7 +59,7 @@
         <td>
             @Html.DisplayFor(modelItem => item.THELOAI.TenTheLoai)
         </td>
-        <td>
+        <td class="col-3">
             @Html.ActionLink("Chỉnh sửa", "Edit", new { id=item.IDSach }, new { @class = "btn btn-outline-warning" }) |
             @Html.ActionLink("Chi tiết", "Details", new { id=item.IDSach }, new { @class = "btn btn-outline-info" }) |
             @Html.ActionLink("Xóa", "Delete", new { id=item.IDSach }, new { @class = "btn btn-outline-danger" })
