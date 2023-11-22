@@ -19,7 +19,7 @@ namespace MiniBook.Controllers
         {
             if (Session["Admin"] == null)
                 return RedirectToAction("Login", "Admin");
-            var dONHANGs = db.DONHANGs.Include(d => d.KHACHHANG).Include(d => d.VOUCHER1);
+            var dONHANGs = db.DONHANGs.OrderByDescending(d => d.NgayDat).Include(d => d.KHACHHANG).Include(d => d.VOUCHER1);
             return View(dONHANGs.ToList());
         }
         public ActionResult LichSuDonHang(int id)
